@@ -1,0 +1,390 @@
+.portfolioSection{
+	width: 100%;
+	padding: 75px 8% 60px;
+	background-color: var(--bg-clr-two);
+}
+.portfolioSection .portfolioTitle{
+	max-width: 700px;
+	margin: 0px auto;
+	text-align: center;
+}
+.portfolioSection .portfolioTitle h1{
+	position: relative;
+	display: inline-block;
+	font-size: var(--large-heading);
+	color: var(--primary-heading-clr);
+	text-transform: uppercase;
+	margin-bottom: 30px;
+}
+.portfolioSection .portfolioTitle h1::before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	top: 120%;
+	left: 0;
+	background-color: var(--secondary-heading-clr);
+}
+.portfolioSection .portfolioTitle h1::after{
+	content: '';
+	position: absolute;
+	width: 40%;
+	height: 3px;
+	top: calc(120% - 1px);
+	left: 0;
+	background-color: var(--primary-clr);
+}
+.portfolioContents .portfolioBtns{
+	padding: 20px 0px 25px;
+}
+.portfolioContents .portfolioBtns ul{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	list-style: none;
+}
+.portfolioContents .portfolioBtns ul li{
+	display: inline-block;
+	padding: 3px 0px;
+	font-size: 18px;
+	font-weight: 500;
+	color: var(--secondary-heading-clr);
+	letter-spacing: 1px;
+	margin: 4px 15px;
+	cursor: pointer;
+	transition: color 0.4s;
+}
+.portfolioContents .portfolioBtns ul li:hover{
+	color: var(--primary-clr);
+}
+.portfolioContents .portfolioBtns ul li.active{
+	position: relative;
+	color: var(--primary-clr);
+}
+.portfolioContents .portfolioBtns ul li.active::after{
+	content: '';
+	position: absolute;
+	top: 110%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: var(--primary-clr);
+	animation: portfolioAnimOne 0.4s linear;
+}
+@keyframes portfolioAnimOne{
+	0%{
+		transform: scale(0);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+.portfolioContents .portfolioGallery{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 10px;
+	
+}
+.portfolioContents .portfolioGallery .card{
+	position: relative;
+	width: 100%;
+	height: 90%;
+	cursor: pointer;
+	overflow: hidden;
+}
+.portfolioContents .portfolioGallery .card.active{
+	display: block;
+	animation: portfolioAnimTwo 0.3s linear;
+}
+@keyframes portfolioAnimTwo{
+	0%{
+		transform: scale(0.6);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+.portfolioContents .portfolioGallery .card.hide{
+	display: none;
+}
+.portfolioGallery .card .imgBox{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.portfolioGallery .card .imgBox img{
+	width: 100%;
+	height: 80%;
+	object-fit: cover;
+	display: flex;
+	cursor: pointer;
+	transition: transform 0.3s linear;
+}
+.portfolioGallery .card:hover .imgBox img{
+	transform: scale(1.1);
+}
+.button button{
+	width: 269px;
+    height: 40px; 
+    font-size: 15px;
+    color: red;
+    border-radius: 4px;
+    background-color:#e2e2e2;
+    border: none;
+	transition: none;
+}
+.BABY button{
+	width: 269px;
+    height: 40px; 
+    font-size: 15px;
+    color: black;
+    border-radius: 2px;
+    background-color:#e2e2e2;
+    border: none;
+	transition: none;
+}
+
+
+
+
+/*  *******   Portfolio Section Styling Ends   *******  */
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+html{
+
+	scroll-behavior: smooth;
+
+	/* =====   Colors   ===== */
+	--black-clr: #000000;
+	--bg-clr-one: #0a0a0a;
+	--bg-clr-two: #0e0e0e;
+	--primary-clr: #e25822;
+	--primary-heading-clr: #e2e2e2;
+	--secondary-heading-clr: #adb5bd;
+	--text-clr: #6b7279;
+    
+    /* =====   Font Sizes   ===== */
+	--text-fontSize: 17px;
+	--btn-fontSize: 18px;
+	--large-heading: 32px;
+}
+body{
+	width: 100%;
+	min-height: 100vh;
+}
+.websiteContainer{
+	max-width: 1568px;
+	margin: 0px auto;
+	background-color: var(--black-clr);
+	color: var(--primary-heading-clr);
+}
+
+/*   *******   Home Section Styling Starts   *******   */
+
+
+/*   *******   About Section Styling Starts   *******   */
+
+.aboutSection{
+	width: 100%;
+	padding: 75px 8% 60px;
+	background-color: var(--bg-clr-one);
+}
+.aboutContents .aboutImage{
+	grid-area: aboutImage;
+}
+.aboutContents .aboutInfo{
+	grid-area: aboutInfo;
+}
+.aboutContents .aboutSkills{
+	grid-area: aboutSkills;
+}
+.aboutSection .aboutContents{
+	display: grid;
+	grid-template-columns: 2fr 5fr;
+	grid-gap: 70px;
+	grid-template-areas: 'aboutImage aboutInfo'
+	                     'aboutSkills aboutSkills';
+}
+.aboutContents .aboutImage{
+	position: relative;
+	min-width: 300px;
+	height: 380px;
+}
+.aboutContents .aboutImage img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	position: relative;
+	z-index: 2;
+}
+.aboutContents .aboutImage::after{
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	outline: 3px solid var(--primary-clr);
+	top: 15px;
+	left: 15px;
+	z-index: 1;
+}
+.aboutContents .aboutInfo h1{
+	position: relative;
+	display: inline-block;
+	font-size: 30px;
+	color: var(--primary-heading-clr);
+	text-transform: uppercase;
+	margin-bottom: 5px;
+}
+.aboutContents .aboutInfo h1::before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	top: 110%;
+	left: 0;
+	background-color: var(--secondary-heading-clr);
+}
+.aboutContents .aboutInfo h1::after{
+	content: '';
+	position: absolute;
+	width: 40%;
+	height: 3px;
+	top: calc(110% - 1px);
+	left: 0;
+	background-color: var(--primary-clr);
+}
+.aboutContents .aboutInfo h2{
+	font-size: 20px;
+	font-weight: 600;
+	color: var(--primary-clr);
+	padding: 14px 0px 15px;
+	text-transform: capitalize;
+	letter-spacing: 1px;
+}
+.aboutContents .aboutInfo p{
+	color: var(--text-clr);
+	font-size: var(--text-fontSize);
+	line-height: 1.2;
+	text-align: justify;
+	padding-bottom: 8px;
+}
+.aboutInfo .aboutPersonalInfo{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10px 20px;
+	margin-top: 14px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #333;
+}
+.aboutInfo .aboutPersonalInfo div{
+	display: grid;
+	grid-template-columns: 1fr -1fr;
+}
+.aboutPersonalInfo div span{
+	color: var(--text-clr);
+	letter-spacing: 1px;
+}
+.aboutContents .aboutInfo button{
+	min-width: 150px;
+	padding: 8px 18px;
+	font-size: var(--btn-fontSize);
+	letter-spacing: 1px;
+	color: var(--secondary-heading-clr);
+	background-color: var(--bg-clr-one);
+	border: 1px solid var(--primary-clr);
+	border-radius: 25px;
+	margin-top: 20px;
+	cursor: pointer;
+	transition: all 0.4s;
+}
+.aboutContents .aboutInfo button:hover{
+	color: var(--primary-clr);
+	border-color: var(--secondary-heading-clr);
+}
+.aboutContents .aboutSkills{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10px 80px;
+}
+.aboutSkills .skill .subject{
+	font-size: var(--text-fontSize);
+	font-weight: thin;
+	color: var(--secondary-heading-clr);
+	padding-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.aboutSkills .skill .progress_bar{
+	width: 100%;
+	height: 16px;
+	background-color: var(--bg-clr-one);
+	padding: 4px 6px;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #222;
+	border-radius: 15px;
+}
+.aboutSkills .skill .progress_bar .progress_line{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: var(--primary-clr);
+	box-shadow: -1px -1px 2px #222,
+	             1px 1px 2px #111;
+	border-radius: 15px;
+}
+.aboutSkills .skill .progress_bar .progress_line::after{
+	position: absolute;
+	content: attr(value);
+	top: -35px;
+	right: 0;
+	transform: translateX(-50%);
+	color: var(--secondary-heading-clr);
+	font-size: var(--text-fontSize);
+}
+
+/*   *******   About Section Styling Ends   *******   */
+@media(max-width: 668px){
+	.aboutInfo .aboutPersonalInfo{
+		grid-template-columns: 1fr;
+	}
+}
+
+
+
+.caractéristiques{
+	background: #477d87;
+
+}
+.container,.container2{
+display: flex;
+margin-left: 85px;
+margin-right: 85px;
+}
+.container2{
+
+	margin-top: 25px;
+
+}
+.container .box,.container2 .box2{
+position: relative;
+margin-left: 45px;
+background:white;
+padding: 25px;
+border-radius:25px;
+transition: .5s;
+
+}
+.container .box:hover,.container2 .box2:hover{
+	transform: scale(1.1);
+	background-color: darkgrey;
+}
+
